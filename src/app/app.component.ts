@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Merati.Frontend';
+  valor = 1;
+  funcionCambiar(e:number){
+    this.valor = e;
+  }
+
+  funcionUbicarFinal(e:number) {
+    this.valor = e;
+  }
 }
