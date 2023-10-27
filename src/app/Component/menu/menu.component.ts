@@ -83,5 +83,6 @@ export class MenuComponent implements OnInit {
     if(this.valorInterno == 3) this.click(2);
     if(this.valorInterno == 4) this.click(3);
     if(this.valorInterno == 5) this.click(5);
+    
   }
 }

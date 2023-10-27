@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:"principal", 
   component: PrincipalComponent
 },
-{path:"login", 
+{path:"", 
 component: LoginComponent
 }
 ];
