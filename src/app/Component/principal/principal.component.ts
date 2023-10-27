@@ -6,6 +6,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./principal.component.scss']
 })
 export class PrincipalComponent implements OnInit {
+  title = 'Merati.Frontend';
+  valor = 1;
 
   @Input() valorComponente = 1;
 
@@ -13,7 +15,6 @@ export class PrincipalComponent implements OnInit {
 
   valorRecibido = 0;
   valorRecibido2 = 0;
-
   valorEstante = 0;
   valorEspacio = 0;
 
@@ -25,20 +26,24 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  funcionComponente(a:number){
+
+  funcionUbicarFinal(e:number) {
+    this.valor = e;
+  }
+  funcionComponente(a:any){
     if(this.valorComponente == a) return true;
     else return false;
   }
 
-  funcionCambiar(e:boolean){
+  funcionCambiar(e:any){
     this.valorTrueFalse = !e;
   }
 
-  funcionCambiar2(e:boolean){
+  funcionCambiar2(e:any){
     this.valorTrueFalse2 = !e;
   }
 
-  funcionIrUbicar(e:number){
+  funcionIrUbicar(e:any){
     this.valorUbicar2.emit(e);
   }
 
