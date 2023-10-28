@@ -13,7 +13,7 @@
     left: 422px;
     top: 51px;
 
-    background: #FFFFFF;
+    background: #d9bb80;
     box-shadow: 10px 10px 0px #C09500;
     border-radius: 12px;
   }
@@ -22,7 +22,7 @@
     width: 267px;
     height: 50px;
 
-    background: #FFFFFF;
+    background: #d9bb80;
 
     flex: none;
     order: 0;
@@ -80,4 +80,9 @@
     color: #a0a0a0;
 
     @apply hover:underline hover:text-yellow-900;
+  }
+  .iconPerfil{
+    border-radius: 50px;
+    height: 70px;
+    width: 70px;
   }

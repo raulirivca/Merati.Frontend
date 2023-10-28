@@ -8,8 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class PrincipalComponent implements OnInit {
   title = 'Merati.Frontend';
   valor = 1;
+  bandejaProductoActivo:any;
 
   @Input() valorComponente = 1;
+  @Input() isProducto:any;
 
   @Output() valorUbicar2 = new EventEmitter<number>();
 
@@ -21,7 +23,8 @@ export class PrincipalComponent implements OnInit {
   valorTrueFalse = true;
   valorTrueFalse2 = true;
 
-  constructor() { }
+  constructor( ) {
+   }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,6 @@
 import { Component, OnInit, Output , EventEmitter} from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-menu',
@@ -8,7 +10,7 @@ import { Component, OnInit, Output , EventEmitter} from '@angular/core';
 export class MenuComponent implements OnInit {
 
   @Output() valorMenu = new EventEmitter<number>();
-
+  isProducto:boolean=false;
   valorInterno = 0;
 
   otrosValores:string = "boton-menu-activado hover:border-2 hover:border-neutral-800";
@@ -19,7 +21,7 @@ export class MenuComponent implements OnInit {
   colorBoton4:string = "#FFFFFF";
   colorBoton5:string = "#FFFFFF";
 
-  constructor() { }
+  constructor(private router: Router) { }
   
   ngOnInit(): void {
   }
@@ -27,7 +29,9 @@ export class MenuComponent implements OnInit {
   dandoValor(a:number) {
     this.valorMenu.emit(a);
   }
-
+  mostrarProductos(){
+    this.isProducto=true
+  }
   click(a:number){
     if(a==1){
       this.colorBoton1 = "#FFC700";
@@ -83,6 +87,7 @@ export class MenuComponent implements OnInit {
     if(this.valorInterno == 3) this.click(2);
     if(this.valorInterno == 4) this.click(3);
     if(this.valorInterno == 5) this.click(5);
-    
+    this.router.navigate(['/'])
+
+    }
   }
-}
