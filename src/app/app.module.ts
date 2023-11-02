@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormProductoComponent } from './Component/producto/form-producto/form-producto.component';
+import { PedidoComponent } from './pedido/pedido.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,8 @@ const routes: Routes = [
     NavbarComponent,
     LoginComponent,
     ProductoComponent,
-    FormProductoComponent
+    FormProductoComponent,
+    PedidoComponent
   ],
   imports: [
     BrowserModule,
