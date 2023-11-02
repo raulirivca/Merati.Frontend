@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
     this.valorMenu.emit(a);
   }
   mostrarProductos(){
-    this.isProducto=true
+    this.router.navigate(['/producto']);
   }
   click(a:number){
     if(a==1){
@@ -87,7 +87,7 @@ export class MenuComponent implements OnInit {
     if(this.valorInterno == 3) this.click(2);
     if(this.valorInterno == 4) this.click(3);
     if(this.valorInterno == 5) this.click(5);
-    this.router.navigate(['/'])
+    this.router.navigate(['/principal'])
 
     }
   }

@@ -1,15 +1,31 @@
 .contenido{
-    position: absolute;
-    padding-left: 10px;
-    width: 950px;
-    height: 872px;
-    left: 422px;
-    top: 195px;
-    overflow-y: scroll;
-    font-size: large;
-    //background-color: #FFFFFF;
-  
-    box-shadow: 10px 10px 0px #C09500;
-    border-radius: 12px;
-  
-  }
+  position: absolute;
+  padding-right: 100px;
+  width:70%;
+  height: 831px;
+  left: 422px;
+  top: 195px;
+  overflow-y: scroll;
+  font-size: large;
+  //background-color: #FFFFFF;
+
+  box-shadow: 10px 10px 0px #C09500;
+  border-radius: 12px;
+
+}
+
+/*https://ed.team/blog/personaliza-el-scroll-de-tu-web-solo-con-css*/
+.contenido::-webkit-scrollbar {
+    display: none;
+}
+.demo-table {
+  width: 100%;
+}
+
+.demo-button-container {
+  padding-bottom: 16px;
+}
+
+.demo-button + .demo-button {
+  margin-left: 8px;
+}
