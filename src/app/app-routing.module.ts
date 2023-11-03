@@ -4,6 +4,7 @@ import { PrincipalComponent } from './Component/principal/principal.component';
 import { LoginComponent } from './Component/login/login.component';
 import { ProductoComponent } from './Component/producto/producto.component';
 import { FormProductoComponent } from './Component/producto/form-producto/form-producto.component';
+import { PedidoComponent } from './Component/pedido/pedido.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,11 @@ component: LoginComponent
 {
   path:"producto/formProducto",
   component:FormProductoComponent
-}
+},
+{
+  path:"pedido",
+  component:PedidoComponent
+},
 ];
 
 @NgModule({

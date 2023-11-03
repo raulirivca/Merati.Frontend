@@ -1,0 +1,24 @@
+<div>
+    <app-menu></app-menu>
+    <app-navbar ></app-navbar>
+    <div class="contenido">
+        <h1>CATALOGO DE PRODUCTOS</h1>
+            <mat-grid-list cols="3" rowHeight="2:2">
+                    <mat-grid-tile *ngFor="let producto of CatalogoProductos">
+                            <table style="align-items: center;">
+                                <tr style="text-align: center;">
+                                    <p>{{producto.Nombre}}</p>
+                                    <img src={{producto.Foto}} width="70px" height="140px">
+                                    <p *ngIf="producto.Disponible" style="font-size: 13px;">Disponible</p>
+                                    <p ngElse style="font-size: 13px;">No Disponible</p>
+                                    <strong>Precio: S/{{producto.Precio}}</strong>
+                                </tr>
+                                <tr style="text-align: center;">
+                                    <button type="button" class="btn btn-secondary" [disabled]= "!producto.Disponible">Agregar</button>
+                                </tr>
+                            </table>  
+                    </mat-grid-tile>
+            </mat-grid-list>
+    </div>
+    
+</div>
