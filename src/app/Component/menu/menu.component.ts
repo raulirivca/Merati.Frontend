@@ -32,6 +32,9 @@ export class MenuComponent implements OnInit {
   mostrarProductos(){
     this.router.navigate(['/producto']);
   }
+  mostrarPedidos(){
+    this.router.navigate(['/pedido']);
+  }
   click(a:number){
     if(a==1){
       this.colorBoton1 = "#FFC700";

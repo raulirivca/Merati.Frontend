@@ -1,24 +1,64 @@
 <div>
     <app-menu></app-menu>
     <app-navbar ></app-navbar>
+
+    
     <div class="contenido">
-        <h1>CATALOGO DE PRODUCTOS</h1>
-            <mat-grid-list cols="3" rowHeight="2:2">
+
+        <div *ngIf="!nuevopedido">
+            <H1>HISTORIAL DE PEDIDOS</H1>
+            <div class="demo-button-container">
+                <button mat-raised-button (click)="addPedido()" class="demo-button">
+                  Nuevo Pedido
+                </button>
+                
+              </div>
+              
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                <!-- Position Column -->
+                <ng-container matColumnDef="IdPedido">
+                  <th mat-header-cell *matHeaderCellDef>IdProducto</th>
+                  <td mat-cell *matCellDef="let element">{{element.IdProducto}}</td>
+                </ng-container>
+              
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="FechaPedido">
+                  <th mat-header-cell *matHeaderCellDef>Fecha del Pedido</th>
+                  <td mat-cell *matCellDef="let element">{{element.FechaPedido}}</td>
+                </ng-container>
+              
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="MontoTotal">
+                  <th mat-header-cell *matHeaderCellDef>MontoTotal</th>
+                  <td mat-cell *matCellDef="let element">S/{{element.MontoTotal}}</td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+        </div>
+
+        <div *ngIf="nuevopedido">
+            <h1>CATALOGO DE PRODUCTOS</h1>
+            <mat-grid-list cols="3" rowHeight="1.6:1.2">
                     <mat-grid-tile *ngFor="let producto of CatalogoProductos">
                             <table style="align-items: center;">
                                 <tr style="text-align: center;">
                                     <p>{{producto.Nombre}}</p>
-                                    <img src={{producto.Foto}} width="70px" height="140px">
+                                    <img src={{producto.Foto}} width="70px" height="100px">
                                     <p *ngIf="producto.Disponible" style="font-size: 13px;">Disponible</p>
-                                    <p ngElse style="font-size: 13px;">No Disponible</p>
+                                    <p *ngIf="!producto.Disponible" style="font-size: 13px;">No Disponible</p>
                                     <strong>Precio: S/{{producto.Precio}}</strong>
+                                    <p></p>
                                 </tr>
-                                <tr style="text-align: center;">
+                                <tr style="text-align: center; padding-top: 100px;">
                                     <button type="button" class="btn btn-secondary" [disabled]= "!producto.Disponible">Agregar</button>
                                 </tr>
                             </table>  
                     </mat-grid-tile>
             </mat-grid-list>
+        </div>
+      
     </div>
     
 </div>

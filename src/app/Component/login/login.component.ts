@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
+  register=false;
+  RegistrarUsuario(){
+    this.register=true
+  }
+  Cancelar(){
+    this.register=false
+  }
 }
