@@ -13,5 +13,10 @@ export class MeratiService {
   get refresh$(){
     return this._refresh$;
   }
+  getProductoAll(): Observable<any> {
+    return this.httpclient.get(`${environment.apiUrl}/Producto`);
+    
+  }
+
   
 }

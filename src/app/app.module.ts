@@ -18,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormProductoComponent } from './Component/producto/form-producto/form-producto.component';
 import { PedidoComponent } from './Component/pedido/pedido.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: LoginComponent }, // Ruta por defecto
@@ -45,7 +46,8 @@ const routes: Routes = [
     MatFormFieldModule, 
     MatInputModule, 
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
   ],
   exports: [RouterModule],
   providers: [],
