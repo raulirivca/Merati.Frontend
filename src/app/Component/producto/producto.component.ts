@@ -35,7 +35,6 @@ export class ProductoComponent implements OnInit {
     this.meratiService.getProductoAll().subscribe(
       listProduct=>{
         this.dataSource.data=listProduct;
-        console.log(listProduct);
         
       })
   }
