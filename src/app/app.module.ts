@@ -14,11 +14,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormProductoComponent } from './Component/producto/form-producto/form-producto.component';
 import { PedidoComponent } from './Component/pedido/pedido.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from "@angular/material/select";
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent }, // Ruta por defecto
@@ -41,13 +45,16 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule, 
+    FormsModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatCardModule, 
     MatTableModule,
     MatFormFieldModule, 
     MatInputModule, 
     MatIconModule,
     MatGridListModule,
-    HttpClientModule
+    MatSelectModule
   ],
   exports: [RouterModule],
   providers: [],

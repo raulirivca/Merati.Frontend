@@ -8,15 +8,16 @@ background-repeat: no-repeat; background-size: 100%;" >
                 <h1 class="card-title text-center">Iniciar Sesion</h1>
                 <div class="mb-3">
                   <label for="exampleFormControlInput1" class="form-label">Usuario</label>
-                  <input type="text" class="form-control" id="login" placeholder="usuario">
+                  <input type="text" class="form-control" id="usuario" [(ngModel)]="usuario" placeholder="usuario">
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlTextarea1" class="form-label">Contraseña</label>
-                  <input type="password" class="form-control" placeholder="contraseña" id="exampleFormControlTextarea1" >
+                  <input type="password" class="form-control" placeholder="contraseña" [(ngModel)]="password" id="password" >
                 </div>
                 <div class="text-center">
-                  <a style="margin-right: 5px;" href="./principal" class="btn btn-primary">Login</a>
-                  <a class="btn btn-secondary" (click)="RegistrarUsuario()">Registrar Usuario</a>
+                  <a style="margin-right: 5px;" class="btn btn-primary" (click)="LoginUsuario()">Login</a>
+                  <a class="btn btn-secondary" (click)="MostrarRegistrar()">Registrar Usuario</a>
+                  
                 </div>
                 
               </div>
@@ -30,37 +31,54 @@ background-repeat: no-repeat; background-size: 100%;" >
             <h1 class="card-title text-center">Registrar Usuario</h1>
 
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Nombres</label>
-              <input type="text" class="form-control" id="name" placeholder="nombres">
+              <label for="exampleFormControlSelect1">Tipo Usuario</label>
+              <select class="form-control" id="tipoUsuario" placeholder="tipoUsuario" 
+              [(ngModel)]="tipoUsuario">
+                <option>CLIENTE</option>
+                <option>EMPLEADO</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label" >Nombres</label>
+              <input type="text" class="form-control" id="name" [(ngModel)]="nombre" placeholder="nombres">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Apellido Paterno</label>
-              <input type="text" class="form-control" id="lastname1" placeholder="apellido paterno">
+              <input type="text" class="form-control" id="lastname1" [(ngModel)]="ApPat" placeholder="apellido paterno">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Apellido Materno</label>
-              <input type="text" class="form-control" id="lastname2" placeholder="apellido materno">
+              <input type="text" class="form-control" id="lastname2" [(ngModel)]="ApMat" placeholder="apellido materno">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Direccion</label>
-              <input type="text" class="form-control" id="address" placeholder="dirreccion">
+              <input type="text" class="form-control" id="address" [(ngModel)]="Direc" placeholder="direccion">
+            </div>
+            <div class="mb-3" *ngIf="tipoUsuario=='EMPLEADO'">
+              <label for="exampleFormControlInput1" class="form-label">DNI</label>
+              <input type="text" class="form-control" id="dni" [(ngModel)]="dni" placeholder="dni">
+            </div>
+            <div class="mb-3"*ngIf="tipoUsuario=='EMPLEADO'">
+              <label for="exampleFormControlInput1" class="form-label">Cargo</label>
+              <input type="text" class="form-control" id="cargo" [(ngModel)]="cargo" placeholder="cargo">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Usuario</label>
-              <input type="text" class="form-control" id="login" placeholder="usuario">
+              <input type="text" class="form-control" id="login" [(ngModel)]="usuario" placeholder="usuario">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" placeholder="contraseña" id="exampleFormControlTextarea1" >
+              <input type="password" class="form-control" placeholder="contraseña" id="password" [(ngModel)]="password" >
             </div>
             <div class="text-center">
-              <a style="margin-right: 5px;" href="./principal" class="btn btn-primary">Guardar</a>
+              <a style="margin-right: 5px;" (click)="RegistrarUsuario()" class="btn btn-primary">Guardar</a>
               <a class="btn btn-secondary" (click)="Cancelar()">Cancelar</a>
             </div>
            
           </div>
         
-      </div>    
+      </div>
+          
     </div>
 </div>
 

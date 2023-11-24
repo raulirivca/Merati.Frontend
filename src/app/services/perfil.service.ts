@@ -19,5 +19,7 @@ export class PerfilService {
     return this.httpclient.get(`${environment.apiUrl}/Perfil/AutenticarUsuario`,{ params });
     
   }
-
+  registrarUsuario(payload:any): Observable<any>{
+  return this.httpclient.post(`${environment.apiUrl}/Perfil/CrearUsuario`,payload);
+  }
 }
