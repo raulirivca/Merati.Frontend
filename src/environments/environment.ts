@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:44333/api'
+  apiUrl: 'https://appmeratisac.azurewebsites.net/api'
 };
 
 /*
